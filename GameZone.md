@@ -14,10 +14,8 @@
 - We use ``' OR 1=1 -- `` to bypass the login form.
 - This presents us with a page with a search field which we will also attack, this time with SQLmap.
 - We intercept a request to the search tool with Burp Suite
-![[Screenshot 2026-01-03 at 1.41.51 PM.png]]
 - Now we craft an SQLmap command to dump the database.
 	- ``sqlmap -r request.txt --dbms=mysql --dump``
-![[Screenshot 2026-01-03 at 1.45.58 PM.png]]
 - We discover a usernamee and password hash: _agent47:ab5db915fc9cea6c78df88106c6500c57f2b52901ca6c0c6218f04122c3efd14_
 - We can now crack this hash with john.
 	- We save the hash to a file ``hash.txt``
@@ -26,9 +24,7 @@
 - Now we can try to ssh into the machine with the newfound password and _agent47_ as the username. It works!
 - We find the user.txt file:
 	- _649ac17b1480ac13ef1e4fa579dac95c_
-![[Screenshot 2026-01-03 at 1.55.07 PM.png]]
 - We learn a bit now about _Reverse SSH port forwarding_, which is described in the notes section below.
-![[cYZsC8p.png]]
 - We run ``ss -tulpn`` it will tell us what socket connections are running
 
 |   |   |
