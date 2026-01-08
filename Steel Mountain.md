@@ -33,8 +33,6 @@ _Again, a google search_
 - As instructed, we now are going to use the _Powerup_ script for Windows to look for abnormalities.
 	- We upload the file to our victim with ``upload ~/PowerSploit.psd1``
 	- To execute: ``load powershell`` && ``powershell_shell``
-![[Screenshot 2026-01-03 at 7.05.20 PM.png]]
-![[Screenshot 2026-01-03 at 7.09.05 PM.png]]
 #### Question 4: Take close attention to the CanRestart option that is set to true. What is the name of the service which shows up as an _unquoted service path_ vulnerability?
 A: AdvancedSystemCareService9
 ##### From TryHackMe:
@@ -46,7 +44,6 @@ The CanRestart option being true, allows us to restart a service on the system, 
 - We set up a netcat listener on port 4443 to wait for the connection.
 - We upload the executable somewhere along the path to our unquoted service.
 - Then we stop and start the service to trigger the .exe.
-![[Screenshot 2026-01-03 at 7.37.51 PM.png]]
 ### Flags
 - User: _b04763b6fcf51fcd7c13abc7db4fd365_
 - Root: _9af5f314f57607c00fd09803a587db80_
@@ -70,8 +67,6 @@ The CanRestart option being true, allows us to restart a service on the system, 
 - Stop and restart the service to catch a root shell
 	- ``sc stop AdvancedSystemCareService9``
 	- ``sc start AdvancedSystemCareService9``
-
 ROOOT! 
-![[Screenshot 2026-01-05 at 7.17.08 PM.png]]
 ### Notes
 - Do more research on the _Unquoted Service Path_ vulnerabilities.
