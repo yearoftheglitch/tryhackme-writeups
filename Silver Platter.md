@@ -32,7 +32,6 @@
 - A ``sudo -l`` reveals that tyler has unrestricted sudo privileges.
 - A quick look at GTFOBins shows us that we can run ``sudo sudo /bin/sh`` to get root.
 - We do so, and it works.
-![[Screenshot 2026-01-03 at 6.07.37 PM.png]]
 
 ### Flags
 - User: _THM{c4ca4238a0b923820dcc509a6f75849b}_
