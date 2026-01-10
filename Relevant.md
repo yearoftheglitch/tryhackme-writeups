@@ -65,7 +65,7 @@ This looks juicy:
 - We get it to the box with certutil again and then execute it and spawn a powershell instance as SYSTEM.
 - ``PrintSpoofer64.exe -i -c powershell.exe``
 - Boom. SYSTEM
-![[Screenshot 2026-01-09 at 8.57.14 PM.png]]
+
 We navigate to the Administrator Desktop and grab the root.txt flag.
 ### Flags
 - User: _THM{fdk4ka34vk346ksxfr21tg789ktf45}_
