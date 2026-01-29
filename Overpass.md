@@ -28,8 +28,3 @@ Also, `/etc/hosts` is writeable at our current privilege level.
 What we can do is create the file path on our local machine and host a reverse shell called `buldscript.sh` that will connect back to a waiting listener.
 
 Boom, root.
-### Flags
-- User: _thm{65c1aaf000506e56996822c6281e6bf7}_
-- Root: _thm{7f336f8c359dbac18d54fdd64ea753bb}_
-### Notes
-This one was fun.
