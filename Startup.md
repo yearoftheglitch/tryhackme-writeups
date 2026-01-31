@@ -33,9 +33,6 @@ All we have to do is replace the contents of the `print.sh` file with a simple b
 We start a nc listener on 4443 and then execute the `planner.sh` file.
 
 Root!
-### Flags
-- lennie pass: _c4ntg3t3n0ughsp1c3_
-- User: _THM{03ce3d619b80ccbfb3b7fc81e46c0e79}_
-- Root: _THM{f963aaa6a430f210222158ae15c3d76d}_
+
 ### Notes
 There were multiple times during doing this machine where I was tempted to look at a guide. However, going the extra mile before doing that paid off in each instance. 
