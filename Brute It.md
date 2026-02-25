@@ -29,10 +29,7 @@ There is no formal privilege escalation vector. However, we can use `sudo cat` t
 We copy the hash and paste it on our local machine into a file called `roothash`
 `john roothash` give us **football** as the plaintext password for root
 We can either make an educated guess that the root flag lives at `/root/root.txt` (which it does), or we can go ahead and `su -` into the root account and hunt it down with to view it.
-### Flags
-- User: _THM{a_password_is_not_a_barrier}_
-- Web: _THM{brut3_f0rce_is_e4sy}_
-- Root: _THM{pr1v1l3g3_3sc4l4t10n}_
+
 ### Notes
 If the sudo binary only allows file-read, don't forget about /etc/shadow. 
 Remember the syntax for ssh2john and john commands:
