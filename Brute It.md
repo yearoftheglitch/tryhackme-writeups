@@ -4,6 +4,7 @@
 ### Enumeration
 PORT   STATE SERVICE REASON  VERSION
 22/tcp open  ssh     syn-ack OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+
 80/tcp open  http    syn-ack Apache httpd 2.4.29 ((Ubuntu))
 **Web Findings:**
 `dirsearch -u 10.81.175.252`
