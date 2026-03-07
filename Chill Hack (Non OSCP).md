@@ -57,10 +57,8 @@ Now that we are Anurodh, we check `sudo -l`, but no goodies there.
 `id` shows us that we are part of the docker group. Let's check GTFOBins.
 The docker command is `docker run -v /:/mnt --rm -it alpine chroot /mnt /bin/sh`
 We are now root. Let's grab the flag.
-### Flags
-- User: _{USER-FLAG: e8vpd3323cfvlp0qpxxx9qtr5iq37oww}_
-- Root: _{ROOT-FLAG: w18gfpn9xehsgd3tovhk0hby4gdp89bg}_
 
 ### Notes
 For some reason, Linpeas did not give me those open ports, there was no data for the "Active Ports" section.
+
 Use this link to find escape characters and stuff for command injection: https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection
